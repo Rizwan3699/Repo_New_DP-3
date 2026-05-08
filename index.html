@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Rizwan Shaikh – Power Platform Developer with 3+ years of experience building enterprise solutions with Power Apps, Power Automate, Power BI & Azure." />
+  <meta name="keywords" content="Power Platform Developer, Power Apps, Power Automate, Power BI, SharePoint, Azure, Microsoft 365" />
+  <meta name="author" content="Rizwan Shaikh" />
+  <meta property="og:title" content="Rizwan Shaikh | Power Platform Developer" />
+  <meta property="og:description" content="Enterprise Power Platform solutions crafted with precision." />
+  <meta property="og:type" content="website" />
+  <title>Rizwan Shaikh | Power Platform Developer</title>
+
+  <!-- Supabase CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===== LOADER ===== -->
+  <div id="loader" class="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">RS</div>
+      <div class="loader-bar"><div class="loader-progress"></div></div>
+    </div>
+  </div>
+
+  <!-- ===== CURSOR ===== -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a class="nav-logo" href="#home">
+        <span class="logo-bracket">&lt;</span>RS<span class="logo-bracket">/&gt;</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home"       class="nav-link active">Home</a></li>
+        <li><a href="#about"      class="nav-link">About</a></li>
+        <li><a href="#skills"     class="nav-link">Skills</a></li>
+        <li><a href="#projects"   class="nav-link">Projects</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#notes"      class="nav-link">Notes</a></li>
+        <li><a href="#resume"     class="nav-link">Resume</a></li>
+        <li><a href="#contact"    class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <i class="fas fa-moon" id="themeIcon"></i>
+        </button>
+        <button class="nav-admin-btn" id="navAdminBtn">Admin</button>
+        <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section id="home" class="hero-section">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-orbs">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+    </div>
+    <div class="hero-container">
+      <div class="hero-content">
+        <div class="hero-badge reveal-up">
+          <span class="badge-dot"></span>
+          Available for opportunities
+        </div>
+        <h1 class="hero-title reveal-up delay-1">
+          <span class="hero-greeting">Hello, I'm</span>
+          <span class="hero-name" id="heroName">Rizwan Shaikh</span>
+        </h1>
+        <div class="hero-role reveal-up delay-2">
+          <span class="role-prefix">I build </span>
+          <span class="typed-text" id="typedText"></span>
+          <span class="cursor-blink">|</span>
+        </div>
+        <p class="hero-desc reveal-up delay-3" id="heroDesc">
+          Power Platform Developer crafting enterprise-grade solutions with Microsoft's low-code ecosystem. Transforming complex business processes into elegant digital workflows.
+        </p>
+        <div class="hero-actions reveal-up delay-4">
+          <a href="#projects" class="btn btn-primary"><span>View My Work</span><i class="fas fa-arrow-right"></i></a>
+          <a href="#contact"  class="btn btn-outline"><span>Get In Touch</span></a>
+        </div>
+        <div class="hero-stats reveal-up delay-5">
+          <div class="stat-item">
+            <span class="stat-num" id="statYears">3+</span>
+            <span class="stat-label">Years Experience</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-num" id="statProjects">20+</span>
+            <span class="stat-label">Projects Delivered</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-num" id="statClients">15+</span>
+            <span class="stat-label">Happy Clients</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual reveal-right delay-2">
+        <div class="hero-avatar-wrap">
+          <div class="avatar-ring ring-1"></div>
+          <div class="avatar-ring ring-2"></div>
+          <div class="avatar-img" id="heroAvatar">
+            <div class="avatar-placeholder"><span>RS</span></div>
+          </div>
+          <div class="floating-badge fb-1"><i class="fas fa-bolt"></i> Power Apps</div>
+          <div class="floating-badge fb-2"><i class="fas fa-chart-bar"></i> Power BI</div>
+          <div class="floating-badge fb-3"><i class="fas fa-robot"></i> Automate</div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-hint">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about" class="section about-section">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">Who I Am</span>
+        <h2 class="section-title">About <span class="accent">Me</span></h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text reveal-left">
+          <p class="about-lead" id="aboutLead">A passionate Power Platform Developer with 3+ years of hands-on experience building enterprise solutions that drive real business impact.</p>
+          <div id="aboutBody">
+            <p>I specialize in the Microsoft Power Platform ecosystem — designing intuitive Power Apps, automating complex workflows with Power Automate, and delivering insightful dashboards in Power BI.</p>
+            <p>Beyond the low-code space, I'm well-versed in SharePoint development, Azure integration, and Microsoft 365 administration, enabling me to build end-to-end enterprise solutions.</p>
+          </div>
+          <div class="about-info-grid" id="aboutInfoGrid">
+            <div class="info-item"><span class="info-label">Location</span><span class="info-val">India</span></div>
+            <div class="info-item"><span class="info-label">Experience</span><span class="info-val">3+ Years</span></div>
+            <div class="info-item"><span class="info-label">Specialization</span><span class="info-val">Power Platform</span></div>
+            <div class="info-item"><span class="info-label">Email</span><span class="info-val">rizwan.shaikh3699@gmail.com</span></div>
+          </div>
+        </div>
+        <div class="about-cards reveal-right">
+          <div class="about-card"><i class="fas fa-mobile-alt"></i><h4>Canvas Apps</h4><p>Pixel-perfect mobile & tablet experiences</p></div>
+          <div class="about-card"><i class="fas fa-sitemap"></i><h4>Model-Driven</h4><p>Data-first enterprise applications</p></div>
+          <div class="about-card"><i class="fas fa-stream"></i><h4>Automation</h4><p>Intelligent business process automation</p></div>
+          <div class="about-card"><i class="fas fa-chart-pie"></i><h4>Analytics</h4><p>Data insights that drive decisions</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section id="skills" class="section skills-section">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">What I Know</span>
+        <h2 class="section-title">My <span class="accent">Skills</span></h2>
+      </div>
+      <div class="skills-grid" id="skillsGrid">
+        <div class="skills-loading"><div class="spinner"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects" class="section projects-section">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">What I've Built</span>
+        <h2 class="section-title">Featured <span class="accent">Projects</span></h2>
+      </div>
+      <div class="projects-filter reveal-up" id="projectsFilter">
+        <button class="filter-btn active" data-filter="all">All</button>
+      </div>
+      <div class="projects-grid" id="projectsGrid">
+        <div class="projects-loading"><div class="spinner"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EXPERIENCE ===== -->
+  <section id="experience" class="section experience-section">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">Where I've Worked</span>
+        <h2 class="section-title">Work <span class="accent">Experience</span></h2>
+      </div>
+      <div class="timeline" id="experienceTimeline">
+        <div class="experience-loading"><div class="spinner"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== NOTES ===== -->
+  <section id="notes" class="section notes-section">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">Knowledge Base</span>
+        <h2 class="section-title">Topics &amp; <span class="accent">Notes</span></h2>
+      </div>
+      <div class="notes-layout">
+        <div class="topics-sidebar" id="topicsSidebar">
+          <div class="notes-loading"><div class="spinner"></div></div>
+        </div>
+        <div class="notes-content" id="notesContent">
+          <div class="notes-placeholder"><i class="fas fa-book-open"></i><p>Select a topic to explore notes</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RESUME ===== -->
+  <section id="resume" class="section resume-section">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">My Credentials</span>
+        <h2 class="section-title">My <span class="accent">Resume</span></h2>
+      </div>
+      <div class="resume-card reveal-up">
+        <div class="resume-icon"><i class="fas fa-file-pdf"></i></div>
+        <div class="resume-info">
+          <h3 id="resumeTitle">Rizwan Shaikh – Power Platform Developer</h3>
+          <p id="resumeDesc">Download my complete resume to learn more about my skills, experience, and certifications.</p>
+        </div>
+        <button class="btn btn-primary" id="resumeDownloadBtn">
+          <i class="fas fa-download"></i><span>Download Resume</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" class="section contact-section">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-tag">Let's Talk</span>
+        <h2 class="section-title">Get In <span class="accent">Touch</span></h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info reveal-left">
+          <p class="contact-intro">Have a project in mind? Looking for a Power Platform developer? Let's build something amazing together.</p>
+          <div class="contact-links">
+            <a href="mailto:rizwan.shaikh3699@gmail.com" class="contact-link">
+              <i class="fas fa-envelope"></i>
+              <span>rizwan.shaikh3699@gmail.com</span>
+            </a>
+          </div>
+          <div class="social-links" id="socialLinksContact"></div>
+        </div>
+        <form class="contact-form reveal-right" id="contactForm">
+          <div class="form-group">
+            <input type="text"  id="contactName"    placeholder="Your Name"    required />
+            <label>Name</label>
+          </div>
+          <div class="form-group">
+            <input type="email" id="contactEmail"   placeholder="Your Email"   required />
+            <label>Email</label>
+          </div>
+          <div class="form-group">
+            <input type="text"  id="contactSubject" placeholder="Subject"      required />
+            <label>Subject</label>
+          </div>
+          <div class="form-group">
+            <textarea id="contactMessage" rows="5" placeholder="Your Message"  required></textarea>
+            <label>Message</label>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full" id="contactSubmitBtn">
+            <span>Send Message</span><i class="fas fa-paper-plane"></i>
+          </button>
+          <div id="contactStatus" class="form-status"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="logo-bracket">&lt;</span>RS<span class="logo-bracket">/&gt;</span>
+        </div>
+        <div class="footer-social" id="footerSocial"></div>
+      </div>
+      <div class="footer-bottom">
+        <p>Designed &amp; Built by <span class="accent">Rizwan Shaikh</span></p>
+        <p class="footer-copy">© <span id="footerYear"></span> All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== OTP MODAL ===== -->
+  <div class="modal-overlay" id="otpModal">
+    <div class="modal">
+      <button class="modal-close" id="otpModalClose"><i class="fas fa-times"></i></button>
+      <div class="modal-step" id="otpStep1">
+        <div class="modal-icon"><i class="fas fa-shield-alt"></i></div>
+        <h3>Resume Access Verification</h3>
+        <p>Enter your email to receive a one-time password for secure resume access.</p>
+        <div class="form-group">
+          <input type="email" id="otpEmail" placeholder="Enter your email" />
+          <label>Email Address</label>
+        </div>
+        <button class="btn btn-primary btn-full" id="sendOtpBtn">
+          <span>Send OTP</span><i class="fas fa-arrow-right"></i>
+        </button>
+        <div id="otpStep1Status" class="form-status"></div>
+      </div>
+      <div class="modal-step hidden" id="otpStep2">
+        <div class="modal-icon"><i class="fas fa-key"></i></div>
+        <h3>Enter Your OTP</h3>
+        <p>A 6-digit code has been sent to <strong id="otpEmailDisplay"></strong></p>
+        <div class="otp-inputs">
+          <input type="text" maxlength="1" class="otp-digit" />
+          <input type="text" maxlength="1" class="otp-digit" />
+          <input type="text" maxlength="1" class="otp-digit" />
+          <input type="text" maxlength="1" class="otp-digit" />
+          <input type="text" maxlength="1" class="otp-digit" />
+          <input type="text" maxlength="1" class="otp-digit" />
+        </div>
+        <button class="btn btn-primary btn-full" id="verifyOtpBtn">
+          <span>Verify &amp; Download</span><i class="fas fa-download"></i>
+        </button>
+        <p class="otp-resend">Didn't receive? <button id="resendOtpBtn" class="link-btn">Resend OTP</button></p>
+        <div id="otpStep2Status" class="form-status"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== ADMIN LOGIN MODAL ===== -->
+  <div class="modal-overlay" id="adminLoginModal">
+    <div class="modal">
+      <button class="modal-close" id="adminLoginClose"><i class="fas fa-times"></i></button>
+      <div class="modal-icon"><i class="fas fa-lock"></i></div>
+      <h3>Admin Access</h3>
+      <p>Sign in with your administrator credentials.</p>
+      <div class="form-group">
+        <input type="email"    id="adminEmail"    placeholder="Admin Email" />
+        <label>Email</label>
+      </div>
+      <div class="form-group password-group">
+        <input type="password" id="adminPassword" placeholder="Password" />
+        <label>Password</label>
+        <button class="toggle-pw" id="toggleAdminPw"><i class="fas fa-eye"></i></button>
+      </div>
+      <button class="btn btn-primary btn-full" id="adminLoginBtn">
+        <span>Sign In</span><i class="fas fa-arrow-right"></i>
+      </button>
+      <div id="adminLoginStatus" class="form-status"></div>
+    </div>
+  </div>
+
+  <!-- ===== TOAST ===== -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="js/supabase-config.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
