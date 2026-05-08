@@ -6,7 +6,7 @@
  * ─────────────────────────────────────────────────────────
  */
 
-const SUPABASE_URL = "https://evkxwvkhhovebfsgxshl";
+const SUPABASE_URL = "https://evkxwvkhhovebfsgxshl.supabase.co";
 const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV2a3h3dmtoaG92ZWJmc2d4c2hsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzgyNjA1MzQsImV4cCI6MjA5MzgzNjUzNH0.KMvEm-dtRAv84ZspmvF35GbBOJgE3BiLL9utUc2lVtU";
 
 // Init Supabase client (loaded via CDN script tag)
